@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --White: hsl(0, 0%, 100%);
+  --Lightpink: hsl(275, 100%, 97%);
+  --Grayishpurple: hsl(292, 16%, 49%);
+  --Darkpurple: hsl(292, 42%, 14%);
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--Lightpink);
+}
+
+.bg-container {
+  position: absolute;
+  top: 0;
+}
+
+#bg-img {
+  width: 100%;
+}
+
+main {
+  width: 325px;
+  height: 263px;
+  background-color: var(--White);
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 1.5rem 1.8rem 1.5rem 1.5rem;
+  z-index: 5;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+h1 {
+  display: flex;
+  color: var(--Darkpurple);
+}
+
+h1::before {
+  content: '';
+  background: url(./assets/images/icon-star.svg);
+  width: 45px;
+  height: 40px;
+  background-repeat: no-repeat;
+  display: block;
+}
+.accordion {
+  background-color: var(--White);
+  font-size: 0.7rem;
+  font-weight: bold;
+  color: var(--Darkpurple);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.9s;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.active,
+.accordion:hover {
+  color: hsl(280.92deg 82.98% 53.92%);
+}
+
+.accordion:after {
+  content: '\002B';
+  color: var(--White);
+  background-color: hsl(280.92deg 82.98% 53.92%);
+  border-radius: 60px;
+  padding: 0.5px 5px;
+  font-size: 1rem;
+  font-weight: bold;
+  float: right;
+}
+
+.active:after {
+  content: '\2212';
+}
+
+.panel {
+  background-color: white;
+  display: none;
+}
+
+p {
+  font-size: 0.6rem;
+  color: var(--Grayishpurple);
+  padding-right: 20px;
+}
+
+@media only screen and (max-width: 375px) {
+  main {
+    width: 194px;
+    height: 350px;
+    position: relative;
+  }
+}
